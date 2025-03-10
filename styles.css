@@ -1,3 +1,33 @@
+#light-theme {
+  --primary: #065CBE;
+
+  --gray50: #f9fafb;
+  --gray100: #f3f4f6;
+  --gray200: #e5e7eb;
+  --gray300: #d1d5db;
+  --gray400: #9ca3af;
+  --gray500: #6b7280;
+  --gray600: #4b5563;
+  --gray700: #374151;
+  --gray800: #1f2937;
+  --gray900: #111827;
+}
+
+#dark-theme {
+  --primary: #065CBE;
+
+  --gray50: #111827;
+  --gray100: #1f2937;
+  --gray200: #374151;
+  --gray300: #4b5563;
+  --gray400: #6b7280;
+  --gray500: #9ca3af;
+  --gray600: #d1d5db;
+  --gray700: #e5e7eb;
+  --gray800: #f3f4f6;
+  --gray900: #f9fafb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +41,31 @@ body {
   display: flex;
   flex-direction: column;
 
-  background: #fff;
+  font-family: 'Inter', sans-serif;
+
+  background: var(--gray50);
+}
+
+button {
+  border: 0;
+  background: none;
 }
 
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 16px;
+}
+
+header .logo {
+  height: 20px;
+  fill: var(--primary);
+}
+
+header span {
+  color: var(--gray500);
 }
 
 main {
@@ -29,20 +79,20 @@ main {
 div#messages {
   flex-grow: 1;
   height: max-content;
-  background: #f00;
+  background: #ff000066;
   padding: 16px;
 }
         
 div#classes {
   flex-grow: 1;
   height: max-content;
-  background: #0f0;
+  background: #00ff0066;
   padding: 16px;
 }
         
 div#news{
   flex-grow: 1;
   height: max-content;
-  background: #00f;
+  background: #0000ff66;
   padding: 16px;
 }
