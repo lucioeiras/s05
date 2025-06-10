@@ -12,4 +12,4 @@ function selectTheme(selectedTheme) {
   localStorage.setItem('theme', theme)
 }
 
-selectTheme('light-theme');
+selectTheme(localStorage.getItem('theme') || 'light-theme');
