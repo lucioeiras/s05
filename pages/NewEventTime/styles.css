@@ -82,20 +82,22 @@ main {
   margin-top: 16px;
 }
 
-.schedule-options button {
+.scheduling-container button {
+  background-color: var(--cor-click);
+  border-radius: 50%;
+
   font-size: 16px;
-  font-weight: 600;
+  line-height: 0;
+
+  padding: 8px;
+
+  transition: background-color 0.3s;
 }
 
-.schedule-reject {
-  color: red;
+.scheduling-container button:hover {
+  background-color: var(--cor-sombra);
 }
 
-.schedule-accept {
-  background: green;
-  border-radius: 16px;
-
+.scheduling-container button span {
   color: white;
-
-  padding: 8px 12px;
 }
