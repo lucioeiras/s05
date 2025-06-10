@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+
+  <title>Inatel - Perfil</title>
+</head>
+<body>
+  <header>   
+    <a href="../Profile/index.html" class="theme-button" onclick="openThemeModal()">
+      <span class="material-icons-outlined">arrow_back</span>
+    </a>
+    <img id="svg_logo" src="../../assets/logo.svg" alt="Inatel" />
+    <button class="theme-button" onclick="openThemeModal()">
+        <span class="material-icons-outlined">contrast</span>
+    </button>
+  </header>
+
+  <main>
+    <h1>Seus agendamentos</h1>
+
+    <div id="scheduling-list">
+      
+    </div>
+  </main>
+
+  <div id="modal-container">
+    <div class="theme-modal">
+      <button class="theme-option" onclick="selectTheme('light-theme')">
+        <span class="material-icons-outlined">light_mode</span>
+        Tema Light
+      </button>
+      <button class="theme-option" onclick="selectTheme('dark-theme')">
+        <span class="material-icons-outlined">dark_mode</span>
+        Tema Dark
+      </button>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script src="../../scripts/theme.js"></script>
+</body>
+</html>

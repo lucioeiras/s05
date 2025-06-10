@@ -1,0 +1,97 @@
+header div {
+  width: 24px;
+}
+
+main {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  margin-top: 24px;
+}
+
+#scheduling-list {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.scheduling-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--cor-borda);
+
+  padding: 24px;
+}
+
+.scheduling-container div p {
+  font-size: 16px;
+  font-weight: 500;
+
+  margin-bottom: 12px;
+}
+
+.schedule-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+} 
+
+.schedule-info span {
+  color: var(--cor-click);
+  font-size: 14px;
+}
+
+.schedule-last {
+  margin-top: 6px;
+}
+
+.schedule-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--cor-click);
+  font-size: 18px;
+}
+
+.schedule-time span {
+  color: var(--cor-click);
+  font-size: 18px;
+}
+
+.schedule-options {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 16px;
+}
+
+.schedule-options button {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.schedule-reject {
+  color: red;
+}
+
+.schedule-accept {
+  background: green;
+  border-radius: 16px;
+
+  color: white;
+
+  padding: 8px 12px;
+}

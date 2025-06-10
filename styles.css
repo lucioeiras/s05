@@ -1,31 +1,32 @@
-#light-theme {
-  --primary: #065CBE;
+:root {
+  --md-sys-color-primary: #126ae2;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #edf2f4;
+  --md-sys-color-on-primary-container: #002020;
+}
 
-  --gray50: #f9fafb;
-  --gray100: #f3f4f6;
-  --gray200: #e5e7eb;
-  --gray300: #d1d5db;
-  --gray400: #9ca3af;
-  --gray500: #6b7280;
-  --gray600: #4b5563;
-  --gray700: #374151;
-  --gray800: #1f2937;
-  --gray900: #111827;
+#light-theme {
+  --cor-click: #126ae2; /* Click */
+  --cor-sombra: #0a599b; /* Azul Escuro */
+  --cor-text: black; /* Preto */
+  --cor-back1: #edf2f4; /* Azul claro */
+  --cor-back2: #6a937a; /* Verde Escuro */
+
+  --cinza: #E2E8F0;
+  --cor-borda: #CBD5E0;
+  
+  --frequencia: #126ae2;
+  --nota: #126ae2;
+  --prova: #126ae2;
 }
 
 #dark-theme {
-  --primary: #065CBE;
-
-  --gray50: #111827;
-  --gray100: #1f2937;
-  --gray200: #374151;
-  --gray300: #4b5563;
-  --gray400: #6b7280;
-  --gray500: #9ca3af;
-  --gray600: #d1d5db;
-  --gray700: #e5e7eb;
-  --gray800: #f3f4f6;
-  --gray900: #f9fafb;
+  --cor-click: #CEF09D;
+  --cor-sombra: #9b0a59;
+  --cor-text: black;
+  --cor-back1: #38184C;
+  --cor-back2: #4f6a93;
+  --md-sys-color-primary: #CEF09D;
 }
 
 * {
@@ -38,40 +39,38 @@
 body {
   height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  margin: 0px;
+  background-color: var(--cor-back1);
 
   font-family: 'Inter', sans-serif;
-
-  background: var(--gray50);
 }
 
 h1 {
-  color: var(--gray900);
+  color: var(--cor-text);
   font-size: 20px;
   font-weight: 700;
 }
 
 h2 {
-  color: var(--gray800);
+  color: var(--cor-text);
   font-size: 18px;
   font-weight: 600;
 }
 
 h3 {
-  color: var(--gray700);
+  color: var(--cor-text);
   font-size: 16px;
   font-weight: 600;
 }
 
 h4 {
-  color: var(--gray700);
+  color: var(--cor-text);
   font-size: 14px;
   font-weight: 500;
 }
 
 p {
-  color: var(--gray500);
+  color: var(--cor-text);
   font-size: 12px;
   font-weight: 400;
 }
@@ -91,43 +90,84 @@ header {
   padding: 16px;
 }
 
-header .logo {
-  height: 20px;
-  fill: var(--primary);
+header button, a {
+  border: none;
+  background: none;
+  color: var(--cor-click);
+
+  cursor: pointer;
+
+  transition: color 0.3s;
 }
 
-header span {
-  color: var(--gray500);
+header button:hover, a:hover {
+  color: var(--cor-sombra);
 }
 
-main {
-  height: 100%;
-
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+header img {
+  height: 24px;
+  color: var(--cor-click)
 }
 
-div#messages {
-  flex-grow: 1;
-  height: max-content;
-  padding: 16px;
-}
-        
-div#classes {
-  flex-grow: 1;
-  height: max-content;
-  background: #00ff0066;
-  padding: 16px;
-}
-        
-div#news{
-  flex-grow: 1;
-  height: max-content;
-  padding: 16px;
+.path_logo{
+  fill: var(--cor-click);
 }
 
-div#modal_container {
+#perfil {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  margin-right: 15px;
+}
+
+#mensagens {
+  position: relative;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#user_name {
+  display: block;
+  font-size: 17pt;
+}
+
+#mns_box {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top:5px;
+}
+
+#icon {
+  height: 14px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+}
+
+#mns {
+  padding: 5px;
+  width: 80%;
+  display: inline-block;
+}
+
+.font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+  color: var(--cor-text)
+}
+
+#modal-container {
   visibility: hidden;
 
   position: absolute;
@@ -144,95 +184,115 @@ div#modal_container {
   background: #00000088;
 }
 
-div#modal_theme {
+.theme-modal {
   display: flex;
   flex-direction: column;
   gap: 24px;
 
-  background: var(--gray100);
+  background: var(--cor-back1);
   border-radius: 8px;
 
   padding: 24px;
 }
 
-button#theme_option {
+.theme-option {
   display: flex;
   align-items: center;
   gap: 12px;
 
-  color: var(--gray700);
+  color: var(--cor-click);
   font-size: 16px;
   font-weight: 600;
+
+  transition: 0.3s;
 }
 
-button#theme_option:hover {
-  color: var(--primary);
+.theme-option:hover {
+  color: var(--cor-sombra);
 }
 
-.carousel {
+#componentes {
   position: relative;
-  overflow: hidden;
-
   background-color: white;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 15px;
+  margin: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  margin: 20px;
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel {
-  display: relative; /* mudaremos para flex posteriormente */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .card {
-  min-width: 100%;
-  text-align: center;
+    min-width: 100%;
+    text-align: center;
 }
 
 .card img {
-  width: 100%;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
-.card .info {
-  padding: 10px
+.info {
+    padding: 10px
 }
 
-.card .info p {
-  margin-top: 12px;
+.icon {
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: 18px;
+    display: inline-block;
+    vertical-align: middle
 }
 
-.card .info p .icon {
-  width: 18px;
+.news .controls {
+  width: 100;
 
-  display: inline-block;
-  vertical-align: middle;
-
-  color: var(--primary);
-  font-size: 15px;
-
-  margin-left: 5px;
-  margin-right: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
 
-button.carousel_button {
-  position: absolute;
-  top: 30%;
-
-  transform: translateY(-50%);
-
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-
-  color: white;
-  font-size: 10px;
-  
-  padding: 10px;
-
+#prevBtn, #nextBtn {
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  border: none;
+  background: none;
+  color: var(--cor-click);
+
+  transition: color 0.3s;
 }
 
-#prevBtn { left: 10px; }
-#nextBtn { right: 10px; }
+#prevBtn:hover, #nextBtn:hover {
+  color: var(--cor-sombra);
+}
 
+#prevBtn span, #nextBtn span {
+  font-size: 16px;
+}
+
+#icon span {
+  font-size: 18px;
+  color: var(--cor-click);
+}
